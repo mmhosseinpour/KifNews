@@ -16,7 +16,11 @@ class ManageArticleCategoryController extends Controller
      */
     public function index()
     {
-        return view('admin.Article.Category.index', ["categories" => ArticleCategory::all()]);
+        $orderby = request('orderby');
+        if ($orderby == null)
+            $orderby = "id";
+        $article= ArticleCategory::all()->sortByDesc($orderby);
+        return view('admin.Article.Category.index', ["categories" => $article]);
     }
 
     /**

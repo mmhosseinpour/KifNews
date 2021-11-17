@@ -29,7 +29,6 @@
                                         </div>
                                     </div>
 
-
                                     <x-ArticleCategories/>
 
                                     <div class="text-center">

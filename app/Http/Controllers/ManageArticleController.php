@@ -15,7 +15,14 @@ class ManageArticleController extends Controller
      */
     public function index()
     {
-        return view('admin.Article.Index', ['articles' => Article::all()]);
+        $orderby = request('orderby');
+        if ($orderby == null) {
+            $orderby = "id";
+        }
+        $articles = Article::all()->sortByDesc($orderby);
+
+
+        return view('admin.Article.Index', ['articles' => $articles]);
     }
 
     /**

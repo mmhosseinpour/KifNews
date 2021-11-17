@@ -22,11 +22,26 @@
                         <table class="table table-bordered ">
                             <thead>
                             <tr>
-                                <th scope="col">Id</th>
-                                <th scope="col">title</th>
+                                <th scope="col">
+                                    <a href="/admin/ManageArticle?orderby=id">
+                                        Id
+                                    </a>
+                                </th>
+                                <th scope="col">
+                                    <a href="/admin/ManageArticle?orderby=title">
+                                        title
+                                    </a></th>
                                 <th scope="col">Slug</th>
-                                <th scope="col">Visit</th>
-                                <th scope="col">Category</th>
+                                <th scope="col">
+                                    <a href="/admin/ManageArticle?orderby=visit">
+                                        Visit
+                                    </a>
+                                </th>
+                                <th scope="col">
+                                    <a href="/admin/ManageArticle?orderby=ArticleCategory">
+                                        Category
+                                    </a>
+                                </th>
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>

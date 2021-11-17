@@ -22,9 +22,21 @@
                         <table class="table table-bordered ">
                             <thead>
                             <tr>
-                                <th scope="col">Id</th>
-                                <th scope="col">title</th>
-                                <th scope="col">parent</th>
+                                <th scope="col">
+                                    <a href="/admin/ManageArticleCategory?orderby=id">
+                                        Id
+                                    </a>
+                                </th>
+                                <th scope="col">
+                                    <a href="/admin/ManageArticleCategory?orderby=title">
+                                        title
+                                    </a>
+                                </th>
+                                <th scope="col">
+                                    <a href="/admin/ManageArticleCategory/?orderby=parentId">
+                                        parent
+                                    </a>
+                                </th>
                                 <th scope="col">action</th>
                             </tr>
                             </thead>
