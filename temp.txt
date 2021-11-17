@@ -1,0 +1,73 @@
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('MainArticle', function (Blueprint $table) {
+            $table->id('ArticleId');
+            $table->string('ArticleTitle', 200);
+            $table->string('ArticleSlug', 255);
+            $table->string('ArticleContent');
+            $table->integer('ArticleVisit');
+            $table->unsignedBigInteger('Article_Media');
+            $table->unsignedBigInteger('Article_Categories');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('MainArticle');
+    }
+
+
+U0621	ء	d8 a1
+U0622	آ	d8 a2
+U0623	أ	d8 a3
+U0624	ؤ	d8 a4
+U0625	إ	d8 a5
+U0626	ئ	d8 a6
+U0627	ا	d8 a7
+U0628	ب	d8 a8
+U062A	ت	d8 aa
+U062B	ث	d8 ab
+U062C	ج	d8 ac
+U062D	ح	d8 ad
+U062E	خ	d8 ae
+U062F	د	d8 af
+U0630	ذ	d8 b0
+U0631	ر	d8 b1
+U0632	ز	d8 b2
+U0633	س	d8 b3
+U0634	ش	d8 b4
+U0635	ص	d8 b5
+U0636	ض	d8 b6
+U0637	ط	d8 b7
+U0638	ظ	d8 b8
+U0639	ع	d8 b9
+U063A	غ	d8 ba
+U0641	ف	d9 81
+U0642	ق	d9 82
+U0644	ل	d9 84
+U0645	م	d9 85
+U0646	ن	d9 86
+U0647	ه	d9 87
+U0648	و	d9 88
+U+064E	َ	d9 8e
+U+064F	ُ	d9 8f
+U+0650	ِ	d9 90
+U+0651	ّ	d9 91
+U+0655	ٕ	d9 95
+U067E	پ	d9 be
+U0686	چ	da 86
+U0698	ژ	da 98
+U06A9	ک	da a9
+U06AF	گ	da af
+U06BE	ھ	da be
+U06CC
