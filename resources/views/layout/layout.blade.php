@@ -320,17 +320,29 @@
             </a>
             <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="forms-elements.html">
+                    <a href="/admin/ManageProduct">
                         <i class="bi bi-circle"></i><span>Product List</span>
                     </a>
                 </li>
                 <li>
-                    <a href="forms-layouts.html">
+                    <a href="/admin/ManageProduct/create">
                         <i class="bi bi-circle"></i><span>Create Product</span>
                     </a>
                 </li>
+                <hr>
+                <li>
+                    <a href="/admin/ManageProductCategory">
+                        <i class="bi bi-circle"></i><span>Product Category List</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/admin/ManageProductCategory/create">
+                        <i class="bi bi-circle"></i><span>Create Product Category</span>
+                    </a>
+                </li>
             </ul>
-        </li><!-- End Forms Nav -->
+        </li>
+        <!-- End Forms Nav -->
 
         <li class="nav-item">
             <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">

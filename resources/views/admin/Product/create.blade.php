@@ -18,37 +18,49 @@
                                 <h5 class="card-title">create Article</h5>
 
                                 <!-- Floating Labels Form -->
-                                <form class="row g-3" action="/admin/ManageArticle" method="post"
+                                <form class="row g-3" action="/admin/ManageProduct" method="post"
                                       enctype="multipart/form-data">
                                     @csrf
                                     <div class="col-md-4">
                                         <div class="form-floating">
-                                            <input type="text" name="slug" class="form-control" id="floatingEmail"
-                                                   placeholder="slug..." required>
-                                            <label for="floatingEmail">slug</label>
+                                            <input type="text" name="title" class="form-control" id="floatingEmail"
+                                                   placeholder="title..." required>
+                                            <label for="floatingEmail">title</label>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-floating">
-                                            <input type="text" name="title" class="form-control" id="floatingPassword"
-                                                   placeholder="title..." required>
-                                            <label for="floatingPassword">title</label>
+                                            <input type="number" name="inventory" class="form-control"
+                                                   id="floatingPassword"
+                                                   placeholder="inventory..." required>
+                                            <label for="floatingPassword">inventory</label>
                                         </div>
                                     </div>
 
-                                    <x-ArticleCategories/>
+
+                                    <x-ProductCategory/>
 
 
-                                    <div class="col-12">
+                                    <div class="col-8">
                                         <div class="form-floating">
                                             <!-- Quill Editor Default -->
                                             <textarea class="col-12" id="content" name="content" required>
-                                                <p>put article here...</p>
+                                                put Content here...
                                             </textarea>
 
                                             <!-- End Quill Editor Default -->
                                         </div>
                                     </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-floating">
+                                            <input type="number" name="price" class="form-control"
+                                                   id="floatingPassword"
+                                                   placeholder="price..." required>
+                                            <label for="floatingPassword">price</label>
+                                        </div>
+                                    </div>
+
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <!-- Quill Editor Default -->

@@ -13,7 +13,7 @@ class CreateProductGallery extends Migration
      */
     public function up()
     {
-        Schema::create('product_gallery', function (Blueprint $table) {
+        Schema::create('product_galleries', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('alt');

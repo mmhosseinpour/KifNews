@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
+use App\Models\ProductCategory;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
-class ManageArticleController extends Controller
+class ManageProductCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,14 +14,18 @@ class ManageArticleController extends Controller
      */
     public function index()
     {
+        //orderBy
         $orderby = request('orderby');
-        if ($orderby == null) {
-            $orderby = "id";
-        }
-        $articles = Article::all()->sortByDesc($orderby);
 
+        //Default Order
+        if ($orderby == null)
+            $orderby = 'id';
 
-        return view('admin.Article.Index', ['articles' => $articles]);
+        //Run Query
+        $category = ProductCategory::all()->sortByDesc($orderby);
+
+        //Return query
+        return view('admin.product.category.index', ['categories' => $category]);
     }
 
     /**
@@ -32,7 +35,7 @@ class ManageArticleController extends Controller
      */
     public function create()
     {
-        return view('admin.Article.create');
+        return view('admin.product.category.create');
     }
 
     /**
@@ -43,17 +46,12 @@ class ManageArticleController extends Controller
      */
     public function store(Request $request)
     {
-        Storage::disk('local')->put('\img', $request['img']);
+        ProductCategory::create([
+            'title' => $request['title'],
+            'parentId' => $request['categoryId']
+        ]);
+        return redirect('/admin/ManageProductCategory');
 
-        Article::create([
-                'title' => $request['title'],
-                'slug' => $request['slug'],
-                'content' => $request['content'],
-                'categoryId' => $request['parentId'],
-                'visit' => 0]
-        );
-
-        return redirect('/admin/ManageArticle');
     }
 
     /**
@@ -64,13 +62,7 @@ class ManageArticleController extends Controller
      */
     public function show($id)
     {
-        $article = Article::find($id);
-
-        $article->visit = $article->visit + 1;
-
-        $article->save();
-
-        return view('admin.Article.show', ['article' => $article]);
+        return view('admin.product.category.show', ['item' => ProductCategory::find($id)]);
     }
 
     /**
@@ -81,11 +73,12 @@ class ManageArticleController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.Article.edit', ['article' => Article::find($id)]);
+        return view('admin.product.category.edit', ['item' => ProductCategory::find($id)]);
     }
 
     /**
      * Update the specified resource in storage.
+     *
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
@@ -93,16 +86,14 @@ class ManageArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $article = Article::find($id);
+        $category = ProductCategory::find($id);
 
-        $article->title = $request['title'];
-        $article->content = $request['content'];
-        $article->slug = $request['slug'];
-        $article->categoryId = $request['parentId'];
+        $category->title = $request['title'];
+        $category->parentid = $request['categoryId'];
 
-        $article->save();
+        $category->save();
 
-        return redirect('/admin/ManageArticle');
+        return redirect('/admin/ManageProductCategory');
     }
 
     /**
@@ -113,9 +104,9 @@ class ManageArticleController extends Controller
      */
     public function destroy($id)
     {
-        $article = Article::find($id);
-        $article->delete();
+        $category = ProductCategory::find($id);
+        $category->delete();
 
-        return redirect('/admin/ManageArticle');
+        return redirect('/admin/ManageProductCategory');
     }
 }

@@ -18,7 +18,8 @@
                                 <h5 class="card-title">Edit Article</h5>
 
                                 <!-- Floating Labels Form -->
-                                <form class="row g-3" action="/admin/ManageArticle" method="post">
+                                <form class="row g-3" action="/admin/ManageArticle/{{$article->id}}" method="post">
+                                    @method('put')
                                     @csrf
                                     <div class="col-md-4">
                                         <div class="form-floating">
@@ -47,7 +48,7 @@
                                             <!-- End Quill Editor Default -->
                                         </div>
                                     </div>
-                                    
+
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                         <button type="reset" class="btn btn-secondary">Reset</button>

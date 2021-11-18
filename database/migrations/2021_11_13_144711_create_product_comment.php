@@ -13,7 +13,7 @@ class CreateProductComment extends Migration
      */
     public function up()
     {
-        Schema::create('product_comment', function (Blueprint $table) {
+        Schema::create('product_comments', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('title');
