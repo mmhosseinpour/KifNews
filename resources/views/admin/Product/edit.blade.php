@@ -18,7 +18,7 @@
                                 <h5 class="card-title">create Article</h5>
 
                                 <!-- Floating Labels Form -->
-                                <form class="row g-3" action="/admin/ManageProduct/{{$product->id}}/edit" method="post"
+                                <form class="row g-3" action="/admin/ManageProduct/{{$product->id}}" method="post"
                                       enctype="multipart/form-data">
                                     @csrf
                                     @method('put')
@@ -38,19 +38,17 @@
                                         </div>
                                     </div>
 
-
                                     <x-ProductCategory/>
-
-
 
                                     <div class="col-8">
                                         <div class="form-floating">
+
                                             <!-- Quill Editor Default -->
                                             <textarea class="col-12" id="content" name="content" required>
-                                                put Content here...
+                                               {{$product->content}}
                                             </textarea>
-
                                             <!-- End Quill Editor Default -->
+
                                         </div>
                                     </div>
 
@@ -58,7 +56,7 @@
                                         <div class="form-floating">
                                             <input type="number" name="price" class="form-control"
                                                    id="floatingPassword"
-                                                   placeholder="price..." required>
+                                                   placeholder="price..." value="{{$product->price}}" required>
                                             <label for="floatingPassword">price</label>
                                         </div>
                                     </div>
@@ -66,7 +64,7 @@
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <!-- Quill Editor Default -->
-                                            <input type="file" name="img" required>
+                                            <input type="file" name="img" >
                                             <!-- End Quill Editor Default -->
                                         </div>
                                     </div>

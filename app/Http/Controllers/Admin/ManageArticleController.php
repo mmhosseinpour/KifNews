@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Article;
-use App\Models\ArticleCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class ManageArticleCategoryController extends Controller
+class ManageArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,10 +17,13 @@ class ManageArticleCategoryController extends Controller
     public function index()
     {
         $orderby = request('orderby');
-        if ($orderby == null)
+        if ($orderby == null) {
             $orderby = "id";
-        $article= ArticleCategory::all()->sortByDesc($orderby);
-        return view('admin.Article.Category.index', ["categories" => $article]);
+        }
+        $articles = Article::all()->sortByDesc($orderby);
+
+
+        return view('admin.Article.Index', ['articles' => $articles]);
     }
 
     /**
@@ -30,7 +33,7 @@ class ManageArticleCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.Article.Category.Create');
+        return view('admin.Article.create');
     }
 
     /**
@@ -41,15 +44,17 @@ class ManageArticleCategoryController extends Controller
      */
     public function store(Request $request)
     {
-//Storage::disk('local')->put('/img/', $request['img']);
+        Storage::disk('local')->put('\img', $request['img']);
 
-        ArticleCategory::create([
-            'title' => $request['title'],
-            'parentId' => $request['parentId'],
-            'article_category_galleryId' => 0
-        ]);
+        Article::create([
+                'title' => $request['title'],
+                'slug' => $request['slug'],
+                'content' => $request['content'],
+                'categoryId' => $request['parentId'],
+                'visit' => 0]
+        );
 
-        return redirect('/admin/ManageArticleCategory/');
+        return redirect('/admin/ManageArticle');
     }
 
     /**
@@ -60,7 +65,13 @@ class ManageArticleCategoryController extends Controller
      */
     public function show($id)
     {
-        dd(ArticleCategory::find($id));
+        $article = Article::find($id);
+
+        $article->visit = $article->visit + 1;
+
+        $article->save();
+
+        return view('admin.Article.show', ['article' => $article]);
     }
 
     /**
@@ -71,7 +82,7 @@ class ManageArticleCategoryController extends Controller
      */
     public function edit($id)
     {
-        return view('admin.Article.Category.edit', ['item' => ArticleCategory::find($id)]);
+        return view('admin.Article.edit', ['article' => Article::find($id)]);
     }
 
     /**
@@ -83,13 +94,16 @@ class ManageArticleCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $articleCategory = ArticleCategory::find($id);
-        $articleCategory->title = $request['title'];
-        $articleCategory->parentId = $request['parentId'];
+        $article = Article::find($id);
 
-        $articleCategory->save();
+        $article->title = $request['title'];
+        $article->content = $request['content'];
+        $article->slug = $request['slug'];
+        $article->categoryId = $request['parentId'];
 
-        return redirect('/admin/ManageArticleCategory');
+        $article->save();
+
+        return redirect('/admin/ManageArticle');
     }
 
     /**
@@ -100,9 +114,9 @@ class ManageArticleCategoryController extends Controller
      */
     public function destroy($id)
     {
-        $articleCategory = ArticleCategory::find($id);
-        $articleCategory->delete();
+        $article = Article::find($id);
+        $article->delete();
 
-        return redirect('/admin/ManageArticleCategory');
+        return redirect('/admin/ManageArticle');
     }
 }

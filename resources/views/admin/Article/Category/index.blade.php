@@ -8,18 +8,18 @@
         <div class="row">
 
             <!-- Recent Sales -->
-            <div class="col-8">
+            <div class="col-lg-8">
                 <div class="card recent-sales">
 
 
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <h5 class="card-title">Articles Category<span>| list</span></h5>
 
                         <a href="/admin/ManageArticleCategory/create">
                             <button class="btn btn-success">Create</button>
                         </a>
 
-                        <table class="table table-bordered ">
+                        <table class="table table-bordered table-hover ">
                             <thead>
                             <tr>
                                 <th scope="col">
@@ -55,14 +55,14 @@
                                     </th>
 
                                     <td class="row col-12">
-                                        <form class="col-4" action="/admin/ManageArticleCategory/{{$item->id}}"
+                                        <form class="col-lg-6 inline-block" action="/admin/ManageArticleCategory/{{$item->id}}"
                                               method="post">
                                             @method('delete')
                                             @csrf
-                                            <button class="btn btn-outline-danger">delete</button>
+                                            <button class="btn btn-outline-danger col-12">delete</button>
                                         </form>
-                                        <a class="col-4" href="/admin/ManageArticleCategory/{{$item->id}}/edit">
-                                            <button class="btn btn-outline-warning">edit</button>
+                                        <a class="col-lg-6 inline-block" href="/admin/ManageArticleCategory/{{$item->id}}/edit">
+                                            <button class="btn btn-outline-warning col-12">edit</button>
                                         </a>
 
                                     </td>

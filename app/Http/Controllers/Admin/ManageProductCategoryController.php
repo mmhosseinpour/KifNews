@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 
-class ArticleInteractionController extends Controller
+class ManageProductCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +15,18 @@ class ArticleInteractionController extends Controller
      */
     public function index()
     {
-        dd('hi');
-        // return view('blog.index', ['articles' => ArticleInteraction::all()]);
+        //orderBy
+        $orderby = request('orderby');
+
+        //Default Order
+        if ($orderby == null)
+            $orderby = 'id';
+
+        //Run Query
+        $category = ProductCategory::all()->sortByDesc($orderby);
+
+        //Return query
+        return view('admin.product.category.index', ['categories' => $category]);
     }
 
     /**
@@ -24,7 +36,7 @@ class ArticleInteractionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.product.category.create');
     }
 
     /**
@@ -35,7 +47,12 @@ class ArticleInteractionController extends Controller
      */
     public function store(Request $request)
     {
-        return 'ثبت شد.';
+        ProductCategory::create([
+            'title' => $request['title'],
+            'parentId' => $request['categoryId']
+        ]);
+        return redirect('/admin/ManageProductCategory');
+
     }
 
     /**
@@ -46,7 +63,7 @@ class ArticleInteractionController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.product.category.show', ['item' => ProductCategory::find($id)]);
     }
 
     /**
@@ -57,11 +74,12 @@ class ArticleInteractionController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.product.category.edit', ['item' => ProductCategory::find($id)]);
     }
 
     /**
      * Update the specified resource in storage.
+     *
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
@@ -69,7 +87,14 @@ class ArticleInteractionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = ProductCategory::find($id);
+
+        $category->title = $request['title'];
+        $category->parentid = $request['categoryId'];
+
+        $category->save();
+
+        return redirect('/admin/ManageProductCategory');
     }
 
     /**
@@ -80,6 +105,9 @@ class ArticleInteractionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = ProductCategory::find($id);
+        $category->delete();
+
+        return redirect('/admin/ManageProductCategory');
     }
 }

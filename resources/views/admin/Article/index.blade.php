@@ -7,11 +7,11 @@
         <div class="row">
 
             <!-- Recent Sales -->
-            <div class="col-8">
-                <div class="card recent-sales">
+            <div class="col-lg-8">
+                <div class="card recent-sales ">
 
 
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <h5 class="card-title">Articles <span>| list</span></h5>
 
 
@@ -19,7 +19,7 @@
                             <button class="btn btn-outline-success">Create</button>
                         </a>
 
-                        <table class="table table-bordered ">
+                        <table class="table table-bordered table-hover ">
                             <thead>
                             <tr>
                                 <th scope="col">
@@ -61,18 +61,19 @@
                                             @endphp
                                         </span></td>
                                     <td class="row col-12">
-                                        <form class="col-4" action="/admin/ManageArticle/{{$item->id}}" method="post">
+                                        <form class="col-lg-4 inline-block" action="/admin/ManageArticle/{{$item->id}}"
+                                              method="post">
                                             @method('delete')
                                             @csrf
                                             <button class="btn btn-outline-danger col-12" type="submit">Delete</button>
                                         </form>
 
-                                        <a class="col-4" href="/admin/ManageArticle/{{$item->id}}/edit">
+                                        <a class="col-lg-4 inline-block" href="/admin/ManageArticle/{{$item->id}}/edit">
                                             <button class="btn btn-outline-warning col-12">Edit</button>
 
                                         </a>
 
-                                        <a class="col-4 " href="/admin/ManageArticle/{{$item->id}}">
+                                        <a class="col-lg-4 inline-block" href="/admin/ManageArticle/{{$item->id}}">
                                             <button class="btn btn-outline-info col-12">Details</button>
                                         </a>
                                     </td>

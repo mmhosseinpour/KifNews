@@ -13,8 +13,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if ($this->app->environment() == 'local') {
+            $this->app->register('Hesto\MultiAuth\MultiAuthServiceProvider');
+        }
     }
+
 
     /**
      * Bootstrap any application services.
