@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -16,14 +17,33 @@ class ManageArticleController extends Controller
      */
     public function index()
     {
+        //order by
         $orderby = request('orderby');
+
+        //pagination variable
+        $page = request('page');
+        $take = request('take');
+
         if ($orderby == null) {
             $orderby = "id";
         }
-        $articles = Article::all()->sortByDesc($orderby);
+        //Default page
+        if ($page == null)
+            $page = 1;
 
+        //default take
+        if ($take == null)
+            $take = 3;
 
-        return view('admin.Article.Index', ['articles' => $articles]);
+        //Run order - pagination Query
+        $articles = Article::all()->sortByDesc($orderby)->skip(($page - 1) * $take)->take($take);
+        //pagination
+        $count = Article::all()->count();
+        $pageCount = $count / $take;
+        if ($count % $take !== 0)
+            $pageCount++;
+
+        return view('admin.Article.Index', ['articles' => $articles, 'count' => $pageCount]);
     }
 
     /**

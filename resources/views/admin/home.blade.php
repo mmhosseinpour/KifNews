@@ -7,7 +7,7 @@
 
             <div class="panel-body">
                 You are logged in as Admin! <br>
-                <a href="/admin/manag" class="btn btn-success">Panel Admin</a>
+                <a href="/admin/" class="btn btn-success">Panel Admin</a>
             </div>
         </div>
     </div>

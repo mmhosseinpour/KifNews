@@ -15,4 +15,15 @@ class Article extends Model
     {
         return $this->hasOne(ArticleCategory::class, 'Id', 'categoryId');
     }
+    public function GetCategory(): string
+    {
+        try {
+            $category = $this->ArticleCategory()->first();
+            return $category->title;
+
+        } catch (\Exception $e) {
+            return "none";
+        }
+
+    }
 }

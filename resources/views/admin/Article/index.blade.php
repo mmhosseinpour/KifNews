@@ -82,6 +82,10 @@
                             </tbody>
                         </table>
 
+                        @for($i=1; $i<=$count;$i++)
+                            <a class="btn btn-outline-info" href="/admin/ManageArticle?page={{$i}}">{{$i}}</a>
+                        @endfor
+
                     </div>
 
                 </div>

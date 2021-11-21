@@ -5,14 +5,13 @@ use App\Http\Controllers\Admin\ManageArticleController;
 use App\Http\Controllers\Admin\ManageArticleCategoryController;
 use App\Http\Controllers\Admin\ManageProductController;
 use App\Http\Controllers\Admin\ManageProductCategoryController;
-use App\Http\Controllers\Admin\PanelController;
+use  App\Http\Controllers\Market\HomeController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\Market\HomeController@index');
+Route::post('/', 'App\Http\Controllers\Market\HomeController@search');
+
 Route::group(['prefix' => 'admin'], function () {
 
-    Route::get('/' ,'App\Http\Controllers\Admin\PanelController@index');
 
     Route::get('/login', '\App\Http\Controllers\AdminAuth\LoginController@showLoginForm')->name('login');
     Route::post('/login', '\App\Http\Controllers\AdminAuth\LoginController@login');
