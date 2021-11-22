@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Product;
 use App\ViewModel\Home\ItemBoxVM;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\Types\Collection;
 
 class HomeController extends Controller
@@ -26,9 +27,6 @@ class HomeController extends Controller
         $page = request('page');
         $take = request('take');
 
-        //init list
-        $items = ["imageUrl", "category", "title", "price", "view", "link", "id"];
-
         //Default page
         if ($page == null)
             $page = 1;
@@ -37,61 +35,56 @@ class HomeController extends Controller
         if ($take == null)
             $take = 3;
 
-#TODO Search box
+        #TODO Search box
         if ($request['key'] !== null) {
-            switch ($request->category) {
-                case 0:
-                    //pagination
-                    $count = Article::all()->count();
-                    $pageCount = $count / $take;
-                    if ($count % $take !== 0)
-                        $pageCount++;
-
-                    //Run order - pagination Query
-                    $articles = Article::where('title', $key)->get()->skip(($page - 1) * $take)->take($take);
-                    foreach ($articles as $article) {
-                        $items = "";
-
-//                        array_add($items,
-//                            ["imageUrl", "category", "title", "price", "view", "link", "id"],
-//                            ["/assets/images/marketplace/blog/4.jpg", "none", $article->title, 0, $article->visit, '/blog/' . $article->id, $article->id]);
-                    }
-                    //return items
-                    return view('Market.search', ['item' => $articles]);
-                    break;
+            switch ($request['category']) {
                 case 1:
-
-                    //pagination
-                    $count = Product::all()->count();
-                    $pageCount = $count / $take;
-                    if ($count % $take !== 0)
-                        $pageCount++;
-
-                    $products = Product::where('title', 'LIKE', $key)->get()->skip(($page - 1) * $take)->take($take);
-
-                    //return items
-                    return view('Market.search', ['item' => $products]);
+                    $items = $this->SearchArticle($key, $page, $take);
+                    return view('market.Article_Search', ['articles' => $items]);
+                    break;
+                case 2:
+                    $items = $this->SearchProduct($key, $page, $take);
+                    return view('market.Product_Search', ['products' => $items]);
                     break;
                 default :
-                    //pagination
-                    $count = Article::all()->count();
-                    $pageCount = $count / $take;
-                    if ($count % $take !== 0)
-                        $pageCount++;
-
-                    //Run order - pagination Query
-                    $articles = Article::where('title', $key)->get()->skip(($page - 1) * $take)->take($take);
-                    foreach ($articles as $article) {
-                        $items = [];
-
-                        array_add($items,
-                            ["imageUrl", "category", "title", "price", "view", "link", "id"],
-                            ["/assets/images/marketplace/blog/4.jpg", $article->GetCategory, $article->title, 0, $article->visit, '/blog/' . $article->id, $article->id]);
-                    }
-                    dd($items);
+                    dd("Select a Category for search");
                     break;
             }
         }
     }
 
+    public function SearchArticle(string $key, int $page, int $take): array
+    {
+        //pagination
+        $count = DB::table('articles')->where('title', "LIKE", '%' . $key . '%')->count();
+        $pageCount = $count / $take;
+        if ($count % $take !== 0)
+            $pageCount++;
+
+        //Run order - pagination Query
+        $articles = DB::table('articles')->where('title', "LIKE", '%' . $key . '%')->skip(($page - 1) * $take)->take($take)->get();
+
+        //return items
+        return ['items' => $articles, 'count' => $pageCount];;
+    }
+
+    public function SearchProduct(string $key, int $page, int $take): array
+    {
+        //pagination
+        $count = DB::table('products')->where('products.title', "LIKE", '%' . $key . '%')->join('product_galleries', function ($join) {
+            $join->on('products.galleryId', '=', 'product_galleries.id');
+        })->count();
+        $pageCount = $count / $take;
+        if ($count % $take !== 0)
+            $pageCount++;
+
+        //Run order - pagination Query
+        $products = DB::table('products')->where('title', "Like", '%' . $key . '%')->skip(($page - 1) * $take)->take($take)->join('product_galleries', function ($join) {
+            $join->on('products.galleryId	', '=', 'product_galleries.id');
+        })->get();
+        dd($products);
+
+        //return items
+        return ['items' => $products, 'count' => $pageCount];;
+    }
 }

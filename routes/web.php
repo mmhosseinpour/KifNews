@@ -12,7 +12,7 @@ Route::post('/', 'App\Http\Controllers\Market\HomeController@search');
 
 Route::group(['prefix' => 'admin'], function () {
 
-
+    Route::get('/', '\App\Http\Controllers\Admin\PanelController@index');
     Route::get('/login', '\App\Http\Controllers\AdminAuth\LoginController@showLoginForm')->name('login');
     Route::post('/login', '\App\Http\Controllers\AdminAuth\LoginController@login');
     Route::post('/logout', '\App\Http\Controllers\AdminAuth\LoginController@logout')->name('logout');
