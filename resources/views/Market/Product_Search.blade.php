@@ -57,12 +57,16 @@
                             <div class="product-box">
                                 <div class="product-imgbox">
                                     <div class="product-front">
-                                        <img src="../assets/images/marketplace/product/5.jpg" class="img-fluid"
-                                             alt="{{$item->title}}">
+                                        <a href="/product/{{$item->id}}">
+                                            <img src="../assets/images/marketplace/product/5.jpg" class="img-fluid"
+                                                 alt="{{$item->title}}">
+                                        </a>
                                     </div>
                                     <div class="product-back">
+                                        <a href="/product/{{$item->id}}">
                                         <img src="{{$item->ProductGallery->source}}" class="img-fluid"
                                              alt="{{$item->ProductGallery->alt}}">
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="product-detail detail-center ">
@@ -82,9 +86,9 @@
                                             </a>
                                         </div>
                                         <div class="detail-right">
-                                            {{--<div class="check-price">--}}
-                                            {{--56,000 تومان--}}
-                                            {{--</div>--}}
+                                            <div class="check-price">
+                                                {{$item->price *2}} تومان
+                                            </div>
                                             <div class="price">
                                                 <div class="price">
                                                     {{$item->price}} تومان

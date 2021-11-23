@@ -57,12 +57,16 @@
                             <div class="product-box">
                                 <div class="product-imgbox">
                                     <div class="product-front">
-                                        <img src="../assets/images/marketplace/blog/1.jpg" class="img-fluid  "
-                                             alt="test">
+                                        <a href="/blog/{{$item->id}}">
+                                            <img src="../assets/images/marketplace/blog/1.jpg" class="img-fluid  "
+                                                 alt="test">
+                                        </a>
                                     </div>
                                     <div class="product-back">
-                                        <img src="../assets/images/layout-2/product/a1.jpg" class="img-fluid  "
-                                             alt="product">
+                                        <a href="/blog/{{$item->id}}">
+                                            <img src="../assets/images/layout-2/product/a1.jpg" class="img-fluid  "
+                                                 alt="product">
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="product-detail detail-center ">

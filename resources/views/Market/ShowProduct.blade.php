@@ -573,7 +573,7 @@
     </section>
 
     <!-- product-tab ends -->
-    <x-RelatedProduct id="4" />
+    <x-RelatedProduct id="4"/>
 
 
 
@@ -716,33 +716,22 @@
                 <div class="product-image">
                     <img src="../assets/images/product-sidebar/001.jpg" class="img-fluid" alt="">
                     <div class="content d-lg-block d-none">
-                        <h5>پیراهن جدید</h5>
-                        <h6>32,000 تومان
-                            <del>49,000 تومان</del>
-                            <span>55% تخفیف</span></h6>
+                        <h5>{{$item->title}}</h5>
+                        <h6>{{$item->price}} تومان
+                            <del>{{$item->price *2}} تومان</del>
+                            <span>50% تخفیف</span></h6>
                     </div>
                 </div>
                 <div class="selection-section">
                     <div class="form-group mb-0">
-                        <select class="form-control">
-                            <option selected="">انتخاب رنگ ...</option>
-                            <option>صورتی</option>
-                            <option>آبی</option>
-                            <option>خاکستری</option>
-                        </select>
+
                     </div>
                     <div class="form-group mb-0">
-                        <select class="form-control">
-                            <option selected="">انتخاب سایز ...</option>
-                            <option>کوچک</option>
-                            <option>متوسط</option>
-                            <option>بزرگ</option>
-                            <option>خیلی بزرگ</option>
-                        </select>
+
                     </div>
                 </div>
                 <div class="add-btn">
-                    <a href="javascript:void(0)" class="btn btn-solid btn-sm">افزودن به سبد خرید</a>
+                    <a onclick="addToCart()" class="btn btn-solid btn-sm">افزودن به سبد خرید</a>
                 </div>
             </div>
         </div>
