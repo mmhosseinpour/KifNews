@@ -71,9 +71,9 @@
                                             <div class="rating-star">
                                                 <span>Category</span>
                                             </div>
-                                            <a href="default.htm">
+                                            <a href="/blog/{{$item->id}}">
                                                 <h6 class="price-title">
-                                                    {{$item->title}}
+                                                    {{$item->title}} - {{$item->GetCategory()}}
                                                 </h6>
                                             </a>
                                         </div>
@@ -111,6 +111,16 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="row col-12">
+                    @for($i=1; $i<$articles['count'];$i++)
+                        <form class="col-1" action="/" method="post">
+                            @csrf
+                            <input type="hidden" name="category" value="1">
+                            <input type="hidden" name="key" value="{{$key}}">
+                            <input type="hidden" name="page" value="{{$i}}">
+                            <button type="submit" class="btn btn-info col-12">{{$i}}</button>
+                        </form>
+                    @endfor</div>
             </div>
         </div>
     </section>

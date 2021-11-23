@@ -57,12 +57,12 @@
                             <div class="product-box">
                                 <div class="product-imgbox">
                                     <div class="product-front">
-                                        <img src="../assets/images/marketplace/product/5.jpg" class="img-fluid  "
+                                        <img src="../assets/images/marketplace/product/5.jpg" class="img-fluid"
                                              alt="{{$item->title}}">
                                     </div>
                                     <div class="product-back">
-                                        <img src="../assets/images/layout-2/product/a1.jpg" class="img-fluid  "
-                                             alt="product">
+                                        <img src="{{$item->ProductGallery->source}}" class="img-fluid"
+                                             alt="{{$item->ProductGallery->alt}}">
                                     </div>
                                 </div>
                                 <div class="product-detail detail-center ">
@@ -75,9 +75,9 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>
                                             </div>
-                                            <a href="default.htm">
+                                            <a href="/product/{{$item->id}}">
                                                 <h6 class="price-title">
-                                                    {{$item->title}}
+                                                    {{$item->title}} - {{$item->GetCategory()}}
                                                 </h6>
                                             </a>
                                         </div>
@@ -115,6 +115,18 @@
                         </div>
                     </div>
                 @endforeach
+                <div class="row col-12">
+                    @for($i=1; $i<$products['count'];$i++)
+                        <form class="col-1" action="/" method="post">
+                            @csrf
+                            <input type="hidden" name="category" value="2">
+                            <input type="hidden" name="key" value="{{$key}}">
+                            <input type="hidden" name="page" value="{{$i}}">
+                            <button type="submit" class="btn btn-info col-12">{{$i}}</button>
+                        </form>
+                    @endfor
+                </div>
+
             </div>
         </div>
     </section>

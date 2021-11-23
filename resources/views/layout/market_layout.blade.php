@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>بیگ دیل - قالب Html فروشگاهی چند منظوره</title>
+    <title>KifNews | @yield('title')</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -27,6 +27,7 @@
 
     <!-- Theme css -->
     <link rel="stylesheet" type="text/css" href="../assets/css/color15.css" media="screen" id="color">
+    @yield('head')
 </head>
 
 <body class="bg-white rtl">
@@ -1094,6 +1095,7 @@
 </footer>
 <!-- footer end -->
 
+@yield('modals')
 
 <!--Newsletter modal popup start-->
 <div class="modal fade bd-example-modal-lg theme-modal" id="exampleModal" tabindex="-1" role="dialog"

@@ -9,6 +9,9 @@ use  App\Http\Controllers\Market\HomeController;
 
 Route::get('/', 'App\Http\Controllers\Market\HomeController@index');
 Route::post('/', 'App\Http\Controllers\Market\HomeController@search');
+Route::get('/blog/{id}', 'App\Http\Controllers\Market\HomeController@GetArticle');
+Route::get('/product/{id}', 'App\Http\Controllers\Market\HomeController@GetProduct');
+Route::post('/buy/{id}', 'App\Http\Controllers\Market\HomeController@Purchase');
 
 Route::group(['prefix' => 'admin'], function () {
 
