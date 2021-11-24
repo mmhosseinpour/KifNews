@@ -1,4 +1,5 @@
 @extends('layout.market_layout')
+@section('title',"Home")
 @section('body')
     #TODO Dynamic Components
 
@@ -96,8 +97,7 @@
         </div>
     </section>
     <!-- key-feature end -->
-
-    @include('market.sections.ProductTab')
+    <x-ProductTab/>
 
     @include('market.sections.testimonial')
 

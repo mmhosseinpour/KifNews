@@ -1,4 +1,5 @@
 @extends('layout.market_layout')
+@section('title',$key)
 @section('body')
 
     <!-- breadcrumb start -->
