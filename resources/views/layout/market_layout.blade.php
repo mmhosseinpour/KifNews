@@ -322,84 +322,10 @@
                                     </button>
                                     <h5 class="mb-0  text-white title-font">دسته بندی های فروشگاه</h5>
                                 </nav>
-                                <div class="collapse  nav-desk" id="navbarToggleExternalContent">
-                                    <ul class="nav-cat title-font">
-                                        <li><a href="category-page(left-sidebar).html"><img
-                                                    src="../assets/images/layout-1/nav-img/01.png"
-                                                    alt="category-product">لباس گرم</a></li>
-                                        <li><a href="category-page(left-sidebar).html"><img
-                                                    src="../assets/images/layout-1/nav-img/02.png"
-                                                    alt="category-product">تلویزیون</a>
-                                        </li>
-                                        <li><a href="category-page(left-sidebar).html"><img
-                                                    src="../assets/images/layout-1/nav-img/03.png"
-                                                    alt="category-product">حیوانات خانگی</a>
-                                        </li>
-                                        <li><a href="category-page(left-sidebar).html"><img
-                                                    src="../assets/images/layout-1/nav-img/04.png"
-                                                    alt="category-product"> ماشین، موتور
-                                                سیکلت</a>
-                                        </li>
-                                        <li><a href="category-page(left-sidebar).html"><img
-                                                    src="../assets/images/layout-1/nav-img/05.png"
-                                                    alt="category-product"> محصولات صنعتی</a>
-                                        </li>
-                                        <li><a href="category-page(left-sidebar).html"><img
-                                                    src="../assets/images/layout-1/nav-img/06.png"
-                                                    alt="category-product">محصولات زیبایی و
-                                                سلامت</a></li>
-                                        <li><a href="category-page(left-sidebar).html"><img
-                                                    src="../assets/images/layout-1/nav-img/07.png"
-                                                    alt="category-product"> آجیل و خشکبار </a>
-                                        </li>
-                                        <li><a href="category-page(left-sidebar).html"><img
-                                                    src="../assets/images/layout-1/nav-img/08.png"
-                                                    alt="category-product"> ورزشی</a></li>
-                                        <li><a href="category-page(left-sidebar).html"><img
-                                                    src="../assets/images/layout-1/nav-img/09.png"
-                                                    alt="category-product"> کیف و کفش</a>
-                                        </li>
-                                        <li><a href="category-page(left-sidebar).html"><img
-                                                    src="../assets/images/layout-1/nav-img/10.png"
-                                                    alt="category-product"> فیلم و موسیقی </a>
-                                        </li>
-                                        <li><a href="category-page(left-sidebar).html"><img
-                                                    src="../assets/images/layout-1/nav-img/11.png"
-                                                    alt="category-product"> کنسول بازی</a></li>
-                                        <li><a href="category-page(left-sidebar).html"><img
-                                                    src="../assets/images/layout-1/nav-img/12.png"
-                                                    alt="category-product"> اسباب بازی، محصولات
-                                                کودک</a></li>
-                                        <li>
-                                            <ul class="mor-slide-open">
-                                                <li><a href="category-page(left-sidebar).html"><img
-                                                            src="../assets/images/layout-1/nav-img/08.png"
-                                                            alt="category-product"> ورزشی</a></li>
-                                                <li><a href="category-page(left-sidebar).html"><img
-                                                            src="../assets/images/layout-1/nav-img/09.png"
-                                                            alt="category-product"> کیف و کفش</a>
-                                                </li>
-                                                <li><a href="category-page(left-sidebar).html"><img
-                                                            src="../assets/images/layout-1/nav-img/10.png"
-                                                            alt="category-product"> فیلم و موسیقی
-                                                    </a></li>
-                                                <li><a href="category-page(left-sidebar).html"><img
-                                                            src="../assets/images/layout-1/nav-img/11.png"
-                                                            alt="category-product"> کنسول بازی</a>
-                                                </li>
-                                                <li><a href="category-page(left-sidebar).html"><img
-                                                            src="../assets/images/layout-1/nav-img/12.png"
-                                                            alt="category-product"> اسباب بازی،
-                                                        محصولات کودک</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a class="mor-slide-click">دسته بندی بیشتر <i
-                                                    class="fa fa-angle-down pro-down"></i><i
-                                                    class="fa fa-angle-up pro-up"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <!-- Categories -->
+                                <x-MenuProductCategory />
+                                <x-MenuArticleCategory  />
+
                             </div>
                         </div>
                         <div class="menu-block">

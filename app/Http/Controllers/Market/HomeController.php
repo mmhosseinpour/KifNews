@@ -103,4 +103,8 @@ class HomeController extends Controller
     {
         return "the ".$request['count'].' of product number:'.$id.' successfully add to your cart.';
     }
+    public function ArticleCatgeory(int $id,int $take){
+
+        $count = Article::query()->where('categoryId', 'LIKE', '%' . $key . '%')->skip(($page - 1) * $take)->take($take)->count();
+    }
 }

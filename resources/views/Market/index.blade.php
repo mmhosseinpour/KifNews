@@ -105,7 +105,7 @@
 
     @include('market.sections.services')
 
-    @include('market.sections.NewArticles')
+    <x-NewArticleTab/>
 
 
 @endsection()
