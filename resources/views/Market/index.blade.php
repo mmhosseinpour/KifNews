@@ -1,7 +1,7 @@
 @extends('layout.market_layout')
-@section('title',"Home")
+@section('title',"خانه")
 @section('body')
-    #TODO Dynamic Components
+    <!--   #TODO Dynamic Components -->
 
     @include('market.sections.homeSlider')
 

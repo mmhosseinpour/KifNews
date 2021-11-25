@@ -12,6 +12,8 @@ Route::post('/', 'App\Http\Controllers\Market\HomeController@search');
 Route::get('/blog/{id}', 'App\Http\Controllers\Market\HomeController@GetArticle');
 Route::get('/product/{id}', 'App\Http\Controllers\Market\HomeController@GetProduct');
 Route::post('/buy/{id}', 'App\Http\Controllers\Market\HomeController@Purchase');
+Route::get('/blog/category/{id}/{page}/{take}', 'App\Http\Controllers\Market\HomeController@GetArticleCatgeory');
+Route::get('/product/category/{id}/{page}/{take}', 'App\Http\Controllers\Market\HomeController@GetProductCatgeory');
 
 Route::group(['prefix' => 'admin'], function () {
 

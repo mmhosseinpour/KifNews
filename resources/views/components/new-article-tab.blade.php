@@ -25,7 +25,7 @@
                                     <a href="blog/{{$item->id}}">
                                         <h4>{{$item->title}} </h4>
                                     </a>
-                                    {{str_limit($item->contennt,30)}}
+                                    {{str_limit($item->content,130)}}
                                     <a href="blog/{{$item->id}}" class=" btn btn-rounded  btn-xs">
                                         مطالعه بیشتر
                                     </a>

@@ -15,7 +15,9 @@
                             <ul>
                                 <li><a href="index.html">خانه</a></li>
                                 <li><i class="fa fa-angle-double-left"></i></li>
-                                <li><a href="javascript:void(0)">محصول</a></li>
+                                <li><a href="">محصول</a></li>
+                                <li><i class="fa fa-angle-double-left"></i></li>
+                                <li><a href="">{{$title}}</a></li>
                             </ul>
                         </div>
                     </div>

@@ -4,7 +4,7 @@
     <div class="tab-product-main tab-four">
         <div class="tab-prodcut-contain">
             <ul class="tabs tab-title">
-                <li class="current"><a href="tab-1">All Categories</a></li>
+                <li class="current"><a href="tab-1">همه دسته بندی ها</a></li>
                 @foreach($categories as $category)
                     <li class=""><a href="tab-{{$counter}}">{{$category->title}}</a></li>
                     <?php $counter = $counter+1; ?>

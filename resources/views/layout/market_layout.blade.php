@@ -2,31 +2,31 @@
 <html lang="en">
 
 <head>
-    <title>KifNews | @yield('title')</title>
+    <title>کیف نیوز | @yield('title')</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="description" content="kifnews">
     <meta name="keywords" content="kifnes">
     <meta name="author" content="kifnews">
-    <link rel="icon" href="../assets/images/favicon/favicon.png" type="image/x-icon">
-    <link rel="shortcut icon" href="../assets/images/favicon/favicon.png" type="image/x-icon">
+    <link rel="icon" href="/assets/images/favicon/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/favicon/favicon.png" type="image/x-icon">
 
     <!--icon css-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/font-awesome.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/themify.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/themify.css">
 
     <!--Slick css-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/slick.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/slick-theme.css">
 
     <!--Animate css-->
-    <link rel="stylesheet" type="text/css" href="../assets/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/animate.css">
     <!-- Bootstrap css -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
 
     <!-- Theme css -->
-    <link rel="stylesheet" type="text/css" href="../assets/css/color15.css" media="screen" id="color">
+    <link rel="stylesheet" type="text/css" href="/assets/css/color15.css" media="screen" id="color">
     @yield('head')
 </head>
 
@@ -35,7 +35,7 @@
 <!-- loader start -->
 <div class="loader-wrapper">
     <div>
-        <img src="../assets/images/marketplace/loader.gif" alt="loader">
+        <img src="/assets/images/marketplace/loader.gif" alt="loader">
     </div>
 </div>
 <!-- loader end -->
@@ -150,7 +150,7 @@
                         </div>
                         <div class="brand-logo logo-sm-center">
                             <a href="index.html">
-                                <img src="../assets/images/marketplace/logo.png" class="img-fluid  " alt="logo">
+                                <img src="/assets/images/marketplace/logo.png" class="img-fluid  " alt="logo">
                             </a>
                         </div>
                     </div>
@@ -307,7 +307,7 @@
                         <div class="logo-block">
                             <div class="brand-logo logo-sm-center">
                                 <a href="index.html">
-                                    <img src="../assets/images/layout-2/logo/logo.png" class="img-fluid  " alt="logo">
+                                    <img src="/assets/images/layout-2/logo/logo.png" class="img-fluid  " alt="logo">
                                 </a>
                             </div>
                         </div>
@@ -496,7 +496,7 @@
                                                         <div class="col-lg-6">
                                                             <div>
                                                                 <img
-                                                                    src="../assets/images/marketplace/menu-banner/1.jpg"
+                                                                    src="/assets/images/marketplace/menu-banner/1.jpg"
                                                                     alt="menu-banner"
                                                                     class="img-fluid">
                                                             </div>
@@ -504,7 +504,7 @@
                                                         <div class="col-lg-6">
                                                             <div>
                                                                 <img
-                                                                    src="../assets/images/marketplace/menu-banner/2.jpg"
+                                                                    src="/assets/images/marketplace/menu-banner/2.jpg"
                                                                     alt="menu-banner"
                                                                     class="img-fluid">
                                                             </div>
@@ -606,17 +606,17 @@
                                                                 <div class="menu-content">
                                                                     <ul>
                                                                         <li>
-                                                                            <a href="../email-template/email-order-success.html">سفارش
+                                                                            <a href="/email-template/email-order-success.html">سفارش
                                                                                 موفق</a></li>
                                                                         <li>
-                                                                            <a href="../email-template/email-order-success-tow.html">سفارش
+                                                                            <a href="/email-template/email-order-success-tow.html">سفارش
                                                                                 موفق 2</a>
                                                                         </li>
                                                                         <li>
-                                                                            <a href="../email-template/email-template.html">قالب
+                                                                            <a href="/email-template/email-template.html">قالب
                                                                                 ایمیل</a></li>
                                                                         <li>
-                                                                            <a href="../email-template/email-template-tow.html">قالب
+                                                                            <a href="/email-template/email-template-tow.html">قالب
                                                                                 ایمیل 2</a></li>
                                                                     </ul>
                                                                 </div>
@@ -635,7 +635,7 @@
                                                         <div class="col mega-box product ">
                                                             <div class="mega-img">
                                                                 <img
-                                                                    src="../assets/images/marketplace/menu-banner/3.jpg"
+                                                                    src="/assets/images/marketplace/menu-banner/3.jpg"
                                                                     alt="menu-banner"
                                                                     class="img-fluid">
                                                             </div>
@@ -654,15 +654,15 @@
                                             <li>
                                                 <a href="javascript:void(0)">فاکتور<span class="new-tag">جدید</span></a>
                                                 <ul>
-                                                    <li><a href="../invoice-template/element-invoice.html">فاکتور یک</a>
+                                                    <li><a href="/invoice-template/element-invoice.html">فاکتور یک</a>
                                                     </li>
-                                                    <li><a href="../invoice-template/element-invoice2.html">فاکتور
+                                                    <li><a href="/invoice-template/element-invoice2.html">فاکتور
                                                             دو</a></li>
-                                                    <li><a href="../invoice-template/element-invoice3.html">فاکتور
+                                                    <li><a href="/invoice-template/element-invoice3.html">فاکتور
                                                             سه</a></li>
-                                                    <li><a href="../invoice-template/element-invoice4.html">فاکتور
+                                                    <li><a href="/invoice-template/element-invoice4.html">فاکتور
                                                             چهار</a></li>
-                                                    <li><a href="../invoice-template/element-invoice5.html">فاکتور
+                                                    <li><a href="/invoice-template/element-invoice5.html">فاکتور
                                                             پنج</a></li>
                                                 </ul>
                                             </li>
@@ -834,30 +834,30 @@
                                 <div class="dropdown-menu gift-dropdown">
                                     <div class="media">
                                         <div class="me-3">
-                                            <img src="../assets/images/icon/1.png" alt="Generic placeholder image">
+                                            <img src="/assets/images/icon/1.png" alt="Generic placeholder image">
                                         </div>
                                         <div class="media-body">
                                             <h5 class="mt-0">روزهای شگفت انگیز</h5>
-                                            <p><img src="../assets/images/icon/currency.png" class="cash" alt="curancy">
+                                            <p><img src="/assets/images/icon/currency.png" class="cash" alt="curancy">
                                                 بیش از 270 جایزه
                                             </p>
                                         </div>
                                     </div>
                                     <div class="media">
                                         <div class="me-3">
-                                            <img src="../assets/images/icon/2.png" alt="Generic placeholder image"
+                                            <img src="/assets/images/icon/2.png" alt="Generic placeholder image"
                                                  class="gift-bloc">
                                         </div>
                                         <div class="media-body">
                                             <h5 class="mt-0">تخفیف مُد</h5>
-                                            <p><img src="../assets/images/icon/fire.png" class="fire" alt="fire">10 در
+                                            <p><img src="/assets/images/icon/fire.png" class="fire" alt="fire">10 در
                                                 صد تخفیف بیشتر (تا
                                                 سقف 100 هزار تومان) </p>
                                         </div>
                                     </div>
                                     <div class="media">
                                         <div class="me-3">
-                                            <img src="../assets/images/icon/3.png" alt="Generic placeholder image">
+                                            <img src="/assets/images/icon/3.png" alt="Generic placeholder image">
                                         </div>
                                         <div class="media-body">
                                             <h5 class="mt-0">75 درصد تخفیف</h5>
@@ -866,7 +866,7 @@
                                     </div>
                                     <div class="media">
                                         <div class="me-3">
-                                            <img src="../assets/images/icon/6.png" alt="Generic placeholder image">
+                                            <img src="/assets/images/icon/6.png" alt="Generic placeholder image">
                                         </div>
                                         <div class="media-body">
                                             <h5 class="mt-0">تا 50 در صد تخفیف</h5>
@@ -875,11 +875,11 @@
                                     </div>
                                     <div class="media">
                                         <div class="me-3">
-                                            <img src="../assets/images/icon/5.png" alt="Generic placeholder image">
+                                            <img src="/assets/images/icon/5.png" alt="Generic placeholder image">
                                         </div>
                                         <div class="media-body">
                                             <h5 class="mt-0">فروشگاه زیبایی</h5>
-                                            <p><img src="../assets/images/icon/currency.png" class="cash" alt="curancy">
+                                            <p><img src="/assets/images/icon/currency.png" class="cash" alt="curancy">
                                                 بیش از 270 جایزه
                                             </p>
                                         </div>
@@ -934,7 +934,7 @@
                             <div class="footer-contant">
                                 <div class="footer-logo">
                                     <a href="index.html">
-                                        <img src="../assets/images/marketplace/logo.png" class="img-fluid" alt="logo">
+                                        <img src="/assets/images/marketplace/logo.png" class="img-fluid" alt="logo">
                                     </a>
                                 </div>
                                 <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم، لورم ایپسوم متن ساختگی با تولید سادگی
@@ -1053,7 +1053,7 @@
                                 </div>
                             </div>
                             <div class="imd-wrraper">
-                                <img src="../assets/images/marketplace/blog/4.jpg" alt="newsletterimg"
+                                <img src="/assets/images/marketplace/blog/4.jpg" alt="newsletterimg"
                                      class="img-fluid bg-img">
                             </div>
                         </div>
@@ -1076,7 +1076,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-xs-12">
                         <div class="quick-view-img">
-                            <img src="../assets/images/marketplace/product/3.jpg" alt="" class="img-fluid bg-img">
+                            <img src="/assets/images/marketplace/product/3.jpg" alt="" class="img-fluid bg-img">
                         </div>
                     </div>
                     <div class="col-lg-6 rtl-text">
@@ -1232,7 +1232,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                         aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body"><img src="../assets/images/size-chart.jpg" alt=""
+                                            <div class="modal-body"><img src="/assets/images/size-chart.jpg" alt=""
                                                                          class="img-fluid ">
                                             </div>
                                         </div>
@@ -1315,7 +1315,7 @@
                         <div class="media">
                             <div class="img-wraper">
                                 <a href="product-page(left-sidebar).html">
-                                    <img src="../assets/images/marketplace/product/1.jpg" alt="">
+                                    <img src="/assets/images/marketplace/product/1.jpg" alt="">
                                 </a>
                             </div>
                             <div class="media-body">
@@ -1410,7 +1410,7 @@
                 <li>
                     <div class="media">
                         <a href="product-page(left-sidebar).html">
-                            <img alt="megastore1" class="me-3" src="../assets/images/marketplace/product/1.jpg">
+                            <img alt="megastore1" class="me-3" src="/assets/images/marketplace/product/1.jpg">
                         </a>
                         <div class="media-body">
                             <a href="product-page(left-sidebar).html">
@@ -1442,7 +1442,7 @@
                 <li>
                     <div class="media">
                         <a href="product-page(left-sidebar).html">
-                            <img alt="megastore1" class="me-3" src="../assets/images/marketplace/product/2.jpg">
+                            <img alt="megastore1" class="me-3" src="/assets/images/marketplace/product/2.jpg">
                         </a>
                         <div class="media-body">
                             <a href="product-page(left-sidebar).html">
@@ -1474,7 +1474,7 @@
                 <li>
                     <div class="media">
                         <a href="product-page(left-sidebar).html">
-                            <img alt="megastore1" class="me-3" src="../assets/images/marketplace/product/3.jpg">
+                            <img alt="megastore1" class="me-3" src="/assets/images/marketplace/product/3.jpg">
                         </a>
                         <div class="media-body">
                             <a href="product-page(left-sidebar).html">
@@ -1548,7 +1548,7 @@
                 <li>
                     <div class="media">
                         <a href="product-page(left-sidebar).html">
-                            <img alt="megastore1" class="me-3" src="../assets/images/layout-2/product/1.jpg">
+                            <img alt="megastore1" class="me-3" src="/assets/images/layout-2/product/1.jpg">
                         </a>
                         <div class="media-body">
                             <a href="product-page(left-sidebar).html">
@@ -1580,7 +1580,7 @@
                 <li>
                     <div class="media">
                         <a href="product-page(left-sidebar).html">
-                            <img alt="megastore1" class="me-3" src="../assets/images/layout-2/product/2.jpg">
+                            <img alt="megastore1" class="me-3" src="/assets/images/layout-2/product/2.jpg">
                         </a>
                         <div class="media-body">
                             <a href="product-page(left-sidebar).html">
@@ -1612,7 +1612,7 @@
                 <li>
                     <div class="media">
                         <a href="product-page(left-sidebar).html">
-                            <img alt="megastore1" class="me-3" src="../assets/images/layout-2/product/3.jpg">
+                            <img alt="megastore1" class="me-3" src="/assets/images/layout-2/product/3.jpg">
                         </a>
                         <div class="media-body">
                             <a href="product-page(left-sidebar).html">
@@ -1746,7 +1746,7 @@
 <div class="product-notification" id="dismiss">
     <span onclick="dismiss();" class="btn-close" aria-hidden="true"></span>
     <div class="media">
-        <img class="me-2" src="../assets/images/marketplace/product/4.jpg" alt="Generic placeholder image">
+        <img class="me-2" src="/assets/images/marketplace/product/4.jpg" alt="Generic placeholder image">
         <div class="media-body">
             <h5 class="mt-0 mb-1">پیشنهاد جدید</h5>
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
@@ -1757,40 +1757,40 @@
 
 
 <!-- latest jquery-->
-<script src="../assets/js/jquery-3.3.1.min.js"></script>
+<script src="/assets/js/jquery-3.3.1.min.js"></script>
 
 <!-- slick js-->
-<script src="../assets/js/slick.js"></script>
+<script src="/assets/js/slick.js"></script>
 
 <!-- tool tip js -->
-<script src="../assets/js/tippy-popper.min.js"></script>
-<script src="../assets/js/tippy-bundle.iife.min.js"></script>
+<script src="/assets/js/tippy-popper.min.js"></script>
+<script src="/assets/js/tippy-bundle.iife.min.js"></script>
 
 <!-- popper js-->
-<script src="../assets/js/popper.min.js"></script>
+<script src="/assets/js/popper.min.js"></script>
 
 <!-- menu js-->
-<script src="../assets/js/menu.js"></script>
+<script src="/assets/js/menu.js"></script>
 
 <!-- ajax search js -->
-<script src="../assets/js/typeahead.bundle.min.js"></script>
-<script src="../assets/js/typeahead.jquery.min.js"></script>
-<script src="../assets/js/ajax-custom.js"></script>
+<script src="/assets/js/typeahead.bundle.min.js"></script>
+<script src="/assets/js/typeahead.jquery.min.js"></script>
+<script src="/assets/js/ajax-custom.js"></script>
 
 
 <!-- Bootstrap js-->
-<script src="../assets/js/bootstrap.js"></script>
+<script src="/assets/js/bootstrap.js"></script>
 
 <!-- father icon -->
-<script src="../assets/js/feather.min.js"></script>
-<script src="../assets/js/feather-icon.js"></script>
+<script src="/assets/js/feather.min.js"></script>
+<script src="/assets/js/feather-icon.js"></script>
 
 <!-- Bootstrap js-->
-<script src="../assets/js/bootstrap-notify.min.js"></script>
+<script src="/assets/js/bootstrap-notify.min.js"></script>
 
 <!-- Theme js-->
-<script src="../assets/js/modal.js"></script>
-<script src="../assets/js/script.js"></script>
+<script src="/assets/js/modal.js"></script>
+<script src="/assets/js/script.js"></script>
 </body>
 
 </html>
