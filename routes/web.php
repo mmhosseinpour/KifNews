@@ -30,10 +30,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/password/reset', '\App\Http\Controllers\AdminAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
     Route::get('/password/reset/{token}', '\App\Http\Controllers\AdminAuth\ResetPasswordController@showResetForm');
 
-    Route::resource('ManageArticle', ManageArticleController::class);
-    Route::resource('ManageArticleCategory', ManageArticleCategoryController::class);
-    Route::resource('ManageProduct', ManageProductController::class);
-    Route::resource('ManageProductCategory', ManageProductCategoryController::class);
+    Route::resource('ManageArticle', ManageArticleController::class)->middleware('admin');
+    Route::resource('ManageArticleCategory', ManageArticleCategoryController::class)->middleware('admin');
+    Route::resource('ManageProduct', ManageProductController::class)->middleware('admin');
+    Route::resource('ManageProductCategory', ManageProductCategoryController::class)->middleware('admin');
 
     Route::get('/home', function () {
         $users[] = Auth::user();
