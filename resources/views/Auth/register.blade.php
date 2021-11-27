@@ -2,10 +2,10 @@
 
 @section("body")
     <form method="POST" class="form-signin {{ $errors->has('name') ? ' has-error' : '' }}"
-          action="{{ url('/admin/register') }}">
+          action="{{ url('user/register') }}">
         {{ csrf_field() }}
         <img class="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+        <h1 class="h3 mb-3 font-weight-normal">Please sign in - customer</h1>
         <div class="form-control">
             <label for="inputName" class="sr-only {{ $errors->has('name') ? ' has-error' : '' }}">username
             </label>

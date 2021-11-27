@@ -1,12 +1,18 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\ManageArticleController;
 use App\Http\Controllers\Admin\ManageArticleCategoryController;
-use App\Http\Controllers\Admin\ManageProductController;
+use App\Http\Controllers\Admin\ManageArticleController;
 use App\Http\Controllers\Admin\ManageProductCategoryController;
-use  App\Http\Controllers\Market\HomeController;
+use App\Http\Controllers\Admin\ManageProductController;
+use App\Http\Controllers\Auth\LoginController;
+use Illuminate\Support\Facades\Route;
 
+Route::group(['prefix' => 'user'], function () {
+    Route::get('register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm');
+    Route::post('register', 'App\Http\Controllers\Auth\RegisterController@create');
+    Route::get('login','App\Http\Controllers\Auth\LoginController@showLoginForm');
+    Route::post('login','App\Http\Controllers\Auth\LoginController@Login');
+});
 Route::get('/', 'App\Http\Controllers\Market\HomeController@index');
 Route::post('/', 'App\Http\Controllers\Market\HomeController@search');
 Route::get('/blog/{id}', 'App\Http\Controllers\Market\HomeController@GetArticle');
@@ -14,6 +20,7 @@ Route::get('/product/{id}', 'App\Http\Controllers\Market\HomeController@GetProdu
 Route::post('/buy/{id}', 'App\Http\Controllers\Market\HomeController@Purchase');
 Route::get('/blog/category/{id}/{page}/{take}', 'App\Http\Controllers\Market\HomeController@GetArticleCatgeory');
 Route::get('/product/category/{id}/{page}/{take}', 'App\Http\Controllers\Market\HomeController@GetProductCatgeory');
+Route::get('/dashboard', 'App\Http\Controllers\Dashboard\DashboardController@Index');
 
 Route::group(['prefix' => 'admin'], function () {
 
